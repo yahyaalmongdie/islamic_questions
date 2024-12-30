@@ -9,10 +9,10 @@ class SplashViewBody extends StatelessWidget {
     return Container(
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
-      decoration: BoxDecoration(
-          image: DecorationImage(
+      decoration: const BoxDecoration(
+          image: const DecorationImage(
               fit: BoxFit.fill,
-              image: AssetImage(
+              image: const AssetImage(
                 Assets.imagesSplashBackground,
               ))),
       child: Column(
