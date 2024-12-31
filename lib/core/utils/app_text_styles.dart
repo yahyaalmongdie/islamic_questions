@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islamic_questions/core/utils/app_colors.dart';
 import 'package:islamic_questions/core/utils/font_size_config.dart';
 
 abstract class AppTextStyles {
@@ -40,6 +41,7 @@ abstract class AppTextStyles {
 
   static TextStyle bold19({required BuildContext context}) {
     return TextStyle(
+      color: AppColors.whiteColor,
       fontWeight: FontWeight.bold,
       fontSize: getResponsiveFontSize(context, fontSize: 19),
     );
@@ -54,6 +56,7 @@ abstract class AppTextStyles {
 
   static TextStyle bold28({required BuildContext context}) {
     return TextStyle(
+      color: AppColors.whiteColor,
       fontWeight: FontWeight.bold,
       fontSize: getResponsiveFontSize(context, fontSize: 28),
     );
@@ -61,6 +64,7 @@ abstract class AppTextStyles {
 
   static TextStyle regular22({required BuildContext context}) {
     return TextStyle(
+      color: AppColors.goldColor,
       fontSize: getResponsiveFontSize(context, fontSize: 22),
       fontWeight: FontWeight.normal,
     );
@@ -82,6 +86,7 @@ abstract class AppTextStyles {
 
   static TextStyle regular26({required BuildContext context}) {
     return TextStyle(
+      color: AppColors.goldColor,
       fontWeight: FontWeight.normal,
       fontSize: getResponsiveFontSize(context, fontSize: 26),
     );
