@@ -8,10 +8,11 @@ class QuestionsPageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PageView.builder(
-      
+
       itemCount: questions.length,
       itemBuilder: (context, index) {
         return QuestionsPageViewItem(
+          questionsList:questions,
           questionIndex: index + 1,
           question: questions[index]["question"],
           options: questions[index]["options"],

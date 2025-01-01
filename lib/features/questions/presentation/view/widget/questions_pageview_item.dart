@@ -8,10 +8,12 @@ class QuestionsPageViewItem extends StatelessWidget {
       {super.key,
       required this.options,
       required this.question,
-      required this.questionIndex});
+      required this.questionIndex, required this.questionsList});
   final List options;
   final String question;
   final int questionIndex;
+   final List questionsList;
+
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,7 @@ class QuestionsPageViewItem extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            const NextPrevRow()
+             NextPrevRow(questionsList: questionsList)
           ],
         ),
       ),
