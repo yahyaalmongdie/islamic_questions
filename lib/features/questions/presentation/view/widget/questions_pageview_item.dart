@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islamic_questions/features/questions/presentation/view/widget/next_prev_row.dart';
 import 'package:islamic_questions/features/questions/presentation/view/widget/options_list.dart';
 import 'package:islamic_questions/features/questions/presentation/view/widget/question_widget.dart';
 
@@ -25,6 +26,10 @@ class QuestionsPageViewItem extends StatelessWidget {
               height: 20,
             ),
             OptionsList(options: options),
+            const SizedBox(
+              height: 20,
+            ),
+            const NextPrevRow()
           ],
         ),
       ),
