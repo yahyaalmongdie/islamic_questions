@@ -6,9 +6,14 @@ class QuestionsView extends StatelessWidget {
   final List questions;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: QuestionsViewBody(
-        questions: questions,
+    return Directionality(
+      textDirection: TextDirection.rtl,
+      child: Scaffold(
+        body: SafeArea(
+          child: QuestionsViewBody(
+            questions: questions,
+          ),
+        ),
       ),
     );
   }

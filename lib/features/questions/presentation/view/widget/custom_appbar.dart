@@ -33,7 +33,7 @@ class CustomAppBar extends StatelessWidget {
                 ),
               ),
               Text(
-                "أسئلة عن ${categoryName}",
+               categoryName,
                 style: AppTextStyles.regular22(context: context),
               ),
               const SizedBox(),

@@ -14,7 +14,7 @@ class LevelsViewBody extends StatelessWidget {
     return Column(
       children: [
         CustomAppBar(
-          categoryName: categoryName,
+          categoryName: "أسئلة عن ${categoryName}",
           typeTitle: "المســتويـات",
         ),
         Expanded(child: LevelsGridView(levels: levels))
