@@ -7,7 +7,6 @@ class QuestionsCubit extends Cubit<QuestionsState> {
   QuestionsCubit() : super(QuestionsInitial());
 
   int currentPage = 0;
-
   bool showNextArrow = true;
   bool showPreviousArrow = false;
   late PageController pageController;
@@ -23,7 +22,6 @@ class QuestionsCubit extends Cubit<QuestionsState> {
     if (currentPage > questions.length - 2) {
       pageController.animateToPage(currentPage,
           duration: const Duration(microseconds: 600), curve: Curves.easeInOut);
-
       showNextArrow = false;
     } else {
       pageController.animateToPage(currentPage,
