@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:islamic_questions/features/home/presentation/view/pages/home_view.dart';
+import 'package:islamic_questions/features/questions/presentation/manager/options_cubit/options_cubit.dart';
 import 'package:islamic_questions/features/questions/presentation/manager/questions_cubit/questions_cubit.dart';
 import 'package:islamic_questions/features/questions/presentation/view/pages/levels_view.dart';
 import 'package:islamic_questions/features/questions/presentation/view/pages/questions_view.dart';
@@ -38,8 +39,15 @@ abstract class AppRoutes {
         GoRoute(
           path: "questionsView",
           builder: (BuildContext context, GoRouterState state) {
-            return BlocProvider(
-              create: (context) => QuestionsCubit(),
+            return MultiBlocProvider(
+              providers: [
+                BlocProvider(
+                  create: (context) => QuestionsCubit(),
+                ),
+                BlocProvider(
+                  create: (context) => OptionsCubit(),
+                ),
+              ],
               child: QuestionsView(
                 questions: state.extra as List,
               ),
