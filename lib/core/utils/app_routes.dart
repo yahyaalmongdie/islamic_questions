@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:islamic_questions/features/home/presentation/view/pages/home_view.dart';
-import 'package:islamic_questions/features/questions/presentation/manager/cubit/questions_cubit.dart';
+import 'package:islamic_questions/features/questions/presentation/manager/questions_cubit/questions_cubit.dart';
 import 'package:islamic_questions/features/questions/presentation/view/pages/levels_view.dart';
 import 'package:islamic_questions/features/questions/presentation/view/pages/questions_view.dart';
 import 'package:islamic_questions/features/splash/presentation/view/pages/spalsh_view.dart';

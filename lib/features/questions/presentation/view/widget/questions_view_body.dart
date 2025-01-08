@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:islamic_questions/features/questions/presentation/manager/cubit/questions_cubit.dart';
+import 'package:islamic_questions/features/questions/presentation/manager/questions_cubit/questions_cubit.dart';
 import 'package:islamic_questions/features/questions/presentation/view/widget/custom_appbar.dart';
 import 'package:islamic_questions/features/questions/presentation/view/widget/questions_pageview.dart';
 

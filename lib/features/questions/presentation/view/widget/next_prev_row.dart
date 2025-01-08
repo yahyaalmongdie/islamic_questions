@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islamic_questions/core/utils/app_colors.dart';
 import 'package:islamic_questions/core/utils/app_text_styles.dart';
-import 'package:islamic_questions/features/questions/presentation/manager/cubit/questions_cubit.dart';
+import 'package:islamic_questions/features/questions/presentation/manager/questions_cubit/questions_cubit.dart';
 import 'package:islamic_questions/features/questions/presentation/view/widget/custom_arrow_widget.dart';
 
 class NextPrevRow extends StatelessWidget {
