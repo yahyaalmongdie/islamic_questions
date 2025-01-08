@@ -8,10 +8,10 @@ class QuestionsPageViewItem extends StatelessWidget {
       {super.key,
       required this.options,
       required this.question,
-      required this.questionIndex, required this.questionsList});
+      required this.questionIndex, required this.questionsList, required this.correctAnswer});
   final List options;
   final String question;
-  final int questionIndex;
+  final int questionIndex, correctAnswer;
    final List questionsList;
 
 
@@ -27,7 +27,7 @@ class QuestionsPageViewItem extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            OptionsList(options: options),
+            OptionsList(options: options,correctAnswer:correctAnswer),
             const SizedBox(
               height: 20,
             ),

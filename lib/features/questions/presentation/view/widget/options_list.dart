@@ -6,11 +6,11 @@ import 'package:islamic_questions/features/questions/presentation/view/widget/op
 class OptionsList extends StatelessWidget {
   const OptionsList({
     super.key,
-    required this.options,
+    required this.options, required this.correctAnswer,
   });
 
   final List options;
-
+  final int correctAnswer;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,7 +25,7 @@ class OptionsList extends StatelessWidget {
               image: const AssetImage(
                 Assets.imagesMosque,
               ))),
-      child: OptionsListItem(options: options),
+      child: OptionsListItem(options: options, correctAnswer: correctAnswer),
     );
   }
 }
