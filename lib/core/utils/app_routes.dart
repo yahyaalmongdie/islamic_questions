@@ -37,13 +37,12 @@ abstract class AppRoutes {
         ),
         GoRoute(
           path: "questionsView",
-          builder: (BuildContext context, GoRouterState stat) {
-            return BlocBuilder<QuestionsCubit, QuestionsState>(
-              builder: (context, state) {
-                return QuestionsView(
-                  questions: stat.extra as List,
-                );
-              },
+          builder: (BuildContext context, GoRouterState state) {
+            return BlocProvider(
+              create: (context) => QuestionsCubit(),
+              child: QuestionsView(
+                questions: state.extra as List,
+              ),
             );
           },
         ),

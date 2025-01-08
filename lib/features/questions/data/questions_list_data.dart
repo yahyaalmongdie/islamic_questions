@@ -13,6 +13,11 @@ List<Map<String, dynamic>> questions = [
           "options": ["الأرض", "المريخ", "المشتري", "الزهرة"],
           "correctAnswer": 2,
         },
+        {
+          "question": "ما هو أكبر كوكب في المجموعة الشمسية؟",
+          "options": ["الأرض", "المريخ", "المشتري", "الزهرة"],
+          "correctAnswer": 2,
+        },
       ],
       [
         {

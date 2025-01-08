@@ -4,4 +4,5 @@ part of 'questions_cubit.dart';
 sealed class QuestionsState {}
 
 final class QuestionsInitial extends QuestionsState {}
+final class ChangeQuestionSuccess extends QuestionsState {}
 final class HideNextButton extends QuestionsState {}
