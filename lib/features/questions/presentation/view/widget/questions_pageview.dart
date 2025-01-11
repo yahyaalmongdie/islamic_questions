@@ -31,7 +31,8 @@ class _QuestionsPageViewState extends State<QuestionsPageView> {
       itemBuilder: (context, index) {
         return QuestionsPageViewItem(
           questionsList: widget.questions,
-          questionIndex: index + 1,
+          questionIndex: index,
+
           correctAnswer:widget.questions[index]["correctAnswer"],
           question: widget.questions[index]["question"],
           options: widget.questions[index]["options"],

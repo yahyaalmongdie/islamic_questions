@@ -7,11 +7,12 @@ class OptionsListItem extends StatelessWidget {
   const OptionsListItem({
     super.key,
     required this.options,
-    required this.correctAnswer,
+    required this.correctAnswer, required this.pageViewIndex,
   });
 
   final List options;
   final int correctAnswer;
+  final int pageViewIndex;
 
   @override
   Widget build(BuildContext context) {
@@ -29,10 +30,10 @@ class OptionsListItem extends StatelessWidget {
                   ),
                   value: index + 1,
                   groupValue:
-                      BlocProvider.of<OptionsCubit>(context).chooseOption,
+                      BlocProvider.of<OptionsCubit>(context).selectedOptions[pageViewIndex],
                   onChanged: (value) {
                     BlocProvider.of<OptionsCubit>(context)
-                        .onChangeOption(index: value!);
+                        .onChangeOption(pageViewIndex:pageViewIndex, value: value!);
                     print(value);
                   });
             },

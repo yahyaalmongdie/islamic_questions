@@ -27,7 +27,7 @@ class QuestionsPageViewItem extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            OptionsList(options: options,correctAnswer:correctAnswer),
+            OptionsList(options: options,correctAnswer:correctAnswer,pageViewIndex: questionIndex,),
             const SizedBox(
               height: 20,
             ),

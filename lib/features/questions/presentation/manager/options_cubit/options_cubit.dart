@@ -6,11 +6,12 @@ part 'options_state.dart';
 class OptionsCubit extends Cubit<OptionsState> {
   OptionsCubit() : super(OptionsInitial());
 
-  int  chooseOption = 10;
+  int chooseOption = 10;
 
-  void onChangeOption({required int index}) {
+  List<int?> selectedOptions = List.generate(10, (index) => null);
+  void onChangeOption({required int pageViewIndex, required int value}) {
     emit(OptionsInitial());
-    chooseOption = index;
+    selectedOptions[pageViewIndex] = value;
     emit(ChooseOptionSuccess());
   }
 }

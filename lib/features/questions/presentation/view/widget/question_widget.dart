@@ -20,7 +20,7 @@ class QuestionWidget extends StatelessWidget {
       decoration: BoxDecoration(
           color: AppColors.goldColor, borderRadius: BorderRadius.circular(16)),
       child: Text(
-        "${questionIndex} - ${question}",
+        "${questionIndex+1} - ${question}",
         style: AppTextStyles.bold16(context: context),
       ),
     );
