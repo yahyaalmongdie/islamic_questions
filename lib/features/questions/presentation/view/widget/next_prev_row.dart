@@ -6,8 +6,7 @@ import 'package:islamic_questions/features/questions/presentation/manager/questi
 import 'package:islamic_questions/features/questions/presentation/view/widget/custom_arrow_widget.dart';
 
 class NextPrevRow extends StatelessWidget {
-  const NextPrevRow(
-      {super.key, required this.questionsList});
+  const NextPrevRow({super.key, required this.questionsList});
   final List questionsList;
 
   @override
@@ -20,19 +19,16 @@ class NextPrevRow extends StatelessWidget {
       child: Row(
         children: [
           BlocConsumer<QuestionsCubit, QuestionsState>(
-            listener: (context, state) {
-
-            },
+            listener: (context, state) {},
             builder: (context, state) {
               return Visibility(
                 visible:
                     BlocProvider.of<QuestionsCubit>(context).showPreviousArrow,
                 child: CustomArrowWidget(
                   onPressed: () {
-                    BlocProvider.of<QuestionsCubit>(context)
-                        .onPressedPrevious(
-                          index: BlocProvider.of<QuestionsCubit>(context).currentPage 
-                        );
+                    BlocProvider.of<QuestionsCubit>(context).onPressedPrevious(
+                        index: BlocProvider.of<QuestionsCubit>(context)
+                            .currentPage);
                   },
                   iconData: Icons.arrow_back_ios,
                 ),
@@ -55,6 +51,32 @@ class NextPrevRow extends StatelessWidget {
             },
           ),
           const Spacer(),
+          BlocConsumer<QuestionsCubit, QuestionsState>(
+            listener: (context, state) {},
+            builder: (context, state) {
+              return Visibility(
+                visible:
+                    BlocProvider.of<QuestionsCubit>(context).showScoreButton,
+                child: Text(
+                  "الدرجة",
+                  style: AppTextStyles.regular16(context: context),
+                ),
+              );
+            },
+          ),
+          BlocConsumer<QuestionsCubit, QuestionsState>(
+            listener: (context, state) {},
+            builder: (context, state) {
+              return Visibility(
+                visible:
+                    BlocProvider.of<QuestionsCubit>(context).showScoreButton,
+                child: CustomArrowWidget(
+                  onPressed: () {},
+                  iconData: Icons.arrow_forward_ios,
+                ),
+              );
+            },
+          ),
           BlocConsumer<QuestionsCubit, QuestionsState>(
             listener: (context, state) {},
             builder: (context, state) {

@@ -25,9 +25,12 @@ class OptionsCubit extends Cubit<OptionsState> {
     emit(OptionsInitial());
     if (coorectAnswer == answerIndex && corectAnswers[pageViewIndex] == false) {
       corectAnswers[pageViewIndex] = true;
+            //count the true values
+
       score = corectAnswers.where((item) => item == true).length;
     } else {
       corectAnswers[pageViewIndex] = false;
+      //count the true values
       score = corectAnswers.where((item) => item == true).length;
     }
     emit(CounntScore());
