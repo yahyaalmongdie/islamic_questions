@@ -8,12 +8,13 @@ class QuestionsPageViewItem extends StatelessWidget {
       {super.key,
       required this.options,
       required this.question,
-      required this.questionIndex, required this.questionsList, required this.correctAnswer});
+      required this.questionIndex,
+      required this.questionsList,
+      required this.correctAnswer});
   final List options;
   final String question;
   final int questionIndex, correctAnswer;
-   final List questionsList;
-
+  final List questionsList;
 
   @override
   Widget build(BuildContext context) {
@@ -27,11 +28,18 @@ class QuestionsPageViewItem extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            OptionsList(options: options,correctAnswer:correctAnswer,pageViewIndex: questionIndex,),
+            OptionsList(
+              options: options,
+              correctAnswer: correctAnswer,
+              pageViewIndex: questionIndex,
+            ),
             const SizedBox(
               height: 20,
             ),
-             NextPrevRow(questionsList: questionsList)
+            NextPrevRow(
+              questionsList: questionsList,
+         
+            )
           ],
         ),
       ),

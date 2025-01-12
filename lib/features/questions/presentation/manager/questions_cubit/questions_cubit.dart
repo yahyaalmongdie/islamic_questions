@@ -40,6 +40,7 @@ class QuestionsCubit extends Cubit<QuestionsState> {
       pageController.animateToPage(currentPage,
           duration: const Duration(microseconds: 600), curve: Curves.easeInOut);
       showNextArrow = true;
+      showScoreButton = false;
     } else {
       currentPage = 0;
       pageController.animateToPage(currentPage,
