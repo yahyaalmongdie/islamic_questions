@@ -7,7 +7,8 @@ class OptionsListItem extends StatelessWidget {
   const OptionsListItem({
     super.key,
     required this.options,
-    required this.correctAnswer, required this.pageViewIndex,
+    required this.correctAnswer,
+    required this.pageViewIndex,
   });
 
   final List options;
@@ -24,17 +25,23 @@ class OptionsListItem extends StatelessWidget {
             listener: (context, state) {},
             builder: (context, state) {
               return RadioListTile(
+                
                   title: Text(
                     options[index],
                     style: AppTextStyles.bold16(context: context),
                   ),
                   value: index + 1,
-                  groupValue:
-                      BlocProvider.of<OptionsCubit>(context).selectedOptions[pageViewIndex],
+                  groupValue: BlocProvider.of<OptionsCubit>(context)
+                      .selectedOptions[pageViewIndex],
                   onChanged: (value) {
-                    BlocProvider.of<OptionsCubit>(context)
-                        .onChangeOption(pageViewIndex:pageViewIndex, value: value!);
-                    print(value);
+                    BlocProvider.of<OptionsCubit>(context).onChangeOption(
+                        pageViewIndex: pageViewIndex, value: value!);
+
+                    BlocProvider.of<OptionsCubit>(context).countScore(
+                      pageViewIndex: pageViewIndex,
+                        coorectAnswer: correctAnswer, answerIndex: index);
+                        print(BlocProvider.of<OptionsCubit>(context).corectAnswers);
+                        print(BlocProvider.of<OptionsCubit>(context).score);
                   });
             },
           );
