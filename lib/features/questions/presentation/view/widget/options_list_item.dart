@@ -25,7 +25,17 @@ class OptionsListItem extends StatelessWidget {
             listener: (context, state) {},
             builder: (context, state) {
               return RadioListTile(
-                
+                  secondary: Visibility(
+                      visible: BlocProvider.of<OptionsCubit>(context)
+                          .showCorrectAnswers,
+                      child: index == correctAnswer
+                          ? Icon(
+                              Icons.check_circle,
+                              color: Colors.green[900],
+                              size: 20,
+                            )
+                          : const SizedBox()),
+                  fillColor: WidgetStateProperty.all(Colors.green[900]),
                   title: Text(
                     options[index],
                     style: AppTextStyles.bold16(context: context),
@@ -38,10 +48,9 @@ class OptionsListItem extends StatelessWidget {
                         pageViewIndex: pageViewIndex, value: value!);
 
                     BlocProvider.of<OptionsCubit>(context).countScore(
-                      pageViewIndex: pageViewIndex,
-                        coorectAnswer: correctAnswer, answerIndex: index);
-                        print(BlocProvider.of<OptionsCubit>(context).corectAnswers);
-                        print(BlocProvider.of<OptionsCubit>(context).score);
+                        pageViewIndex: pageViewIndex,
+                        coorectAnswer: correctAnswer,
+                        answerIndex: index);
                   });
             },
           );

@@ -39,7 +39,7 @@ class QuestionsPageViewItem extends StatelessWidget {
             NextPrevRow(
               questionsList: questionsList,
          
-            )
+            ),
           ],
         ),
       ),

@@ -11,6 +11,8 @@ class OptionsCubit extends Cubit<OptionsState> {
 
   int score = 0;
 
+  bool showCorrectAnswers = false;
+
   void onChangeOption({required int pageViewIndex, required int value}) {
     emit(OptionsInitial());
     selectedOptions[pageViewIndex] = value;
@@ -25,7 +27,7 @@ class OptionsCubit extends Cubit<OptionsState> {
     emit(OptionsInitial());
     if (coorectAnswer == answerIndex && corectAnswers[pageViewIndex] == false) {
       corectAnswers[pageViewIndex] = true;
-            //count the true values
+      //count the true values
 
       score = corectAnswers.where((item) => item == true).length;
     } else {
@@ -34,5 +36,11 @@ class OptionsCubit extends Cubit<OptionsState> {
       score = corectAnswers.where((item) => item == true).length;
     }
     emit(CounntScore());
+  }
+
+  void showAllCorrectAnswers() {
+    emit(OptionsInitial());
+    showCorrectAnswers = true;
+    emit(ShowAllCorrectAnswers());
   }
 }

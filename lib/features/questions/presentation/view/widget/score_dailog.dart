@@ -7,6 +7,7 @@ scoreDailog({
   required BuildContext context,
   required String image,
   required int score,
+  required Function() onPressShowAnswers,
 }) {
   showDialog(
       context: context,
@@ -47,9 +48,7 @@ scoreDailog({
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   MaterialButton(
-                    onPressed: () {
-                      // BlocProvider.of<OptionsCubit>(context).showAnswers;
-                    },
+                    onPressed: onPressShowAnswers,
                     height: 30,
                     color: const Color(0xFFD9D9D9),
                     shape: RoundedRectangleBorder(
