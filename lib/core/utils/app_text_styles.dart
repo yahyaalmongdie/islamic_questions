@@ -95,6 +95,7 @@ abstract class AppTextStyles {
   static TextStyle regular16({required BuildContext context}) {
     return TextStyle(
       fontWeight: FontWeight.normal,
+      height: 1,
       fontSize: getResponsiveFontSize(context, fontSize: 16),
     );
   }

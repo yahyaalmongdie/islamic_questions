@@ -48,13 +48,12 @@ scoreDailog({
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   MaterialButton(
+                    padding: const EdgeInsets.all(5),
                     onPressed: onPressShowAnswers,
                     height: 30,
                     color: const Color(0xFFD9D9D9),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
-                      side:
-                          const BorderSide(width: 1, color: Color(0xFFD9D9D9)),
                     ),
                     child: Text("الاجابات",
                         style: AppTextStyles.regular16(context: context)
@@ -62,6 +61,7 @@ scoreDailog({
                   ),
                   const Spacer(),
                   MaterialButton(
+                    padding: const EdgeInsets.all(5),
                     onPressed: () {
                       context.pop();
                       context.pop();
