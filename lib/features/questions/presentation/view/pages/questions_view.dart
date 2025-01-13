@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islamic_questions/core/shared/sustom_bottom_navigation_bar.dart';
 import 'package:islamic_questions/features/questions/presentation/view/widget/questions_view_body.dart';
 
 class QuestionsView extends StatelessWidget {
@@ -9,12 +10,12 @@ class QuestionsView extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-        body: SafeArea(
-          child: QuestionsViewBody(
-            questions: questions,
+          body: SafeArea(
+            child: QuestionsViewBody(
+              questions: questions,
+            ),
           ),
-        ),
-      ),
+          bottomNavigationBar: const CustomBottomNavigationBar()),
     );
   }
 }

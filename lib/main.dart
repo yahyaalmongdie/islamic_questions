@@ -19,19 +19,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          create: (context) => BannerAdsCubit(),
-        ),
-      ],
-      child: MaterialApp.router(
-        locale: const Locale("ar"),
-        debugShowCheckedModeBanner: false,
-        routerConfig: AppRoutes.router,
-        theme: ThemeData(
-          scaffoldBackgroundColor: AppColors.blackColor,
-        ),
+    return MaterialApp.router(
+      locale: const Locale("ar"),
+      debugShowCheckedModeBanner: false,
+      routerConfig: AppRoutes.router,
+      theme: ThemeData(
+        scaffoldBackgroundColor: AppColors.blackColor,
       ),
     );
   }

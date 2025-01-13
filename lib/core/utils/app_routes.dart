@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:islamic_questions/core/ads/banner_ads_cubit/banner_ads_cubit.dart';
 import 'package:islamic_questions/features/home/presentation/view/pages/home_view.dart';
 import 'package:islamic_questions/features/questions/presentation/manager/options_cubit/options_cubit.dart';
 import 'package:islamic_questions/features/questions/presentation/manager/questions_cubit/questions_cubit.dart';
@@ -23,16 +24,22 @@ abstract class AppRoutes {
         GoRoute(
           path: "homeView",
           builder: (BuildContext context, GoRouterState state) {
-            return const HomeView();
+            return BlocProvider(
+              create: (context) => BannerAdsCubit()..showBannerAds(),
+              child: const HomeView(),
+            );
           },
         ),
         GoRoute(
           path: "levelsView",
           builder: (BuildContext context, GoRouterState state) {
             Map data = state.extra as Map;
-            return LevelsView(
-              levels: data["levels"],
-              categoryName: data["categoryName"],
+            return BlocProvider(
+              create: (context) => BannerAdsCubit()..showBannerAds(),
+              child: LevelsView(
+                levels: data["levels"],
+                categoryName: data["categoryName"],
+              ),
             );
           },
         ),
@@ -46,6 +53,9 @@ abstract class AppRoutes {
                 ),
                 BlocProvider(
                   create: (context) => OptionsCubit(),
+                ),
+                BlocProvider(
+                  create: (context) => BannerAdsCubit()..showBannerAds(),
                 ),
               ],
               child: QuestionsView(
