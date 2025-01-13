@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:islamic_questions/core/ads/banner_ads_cubit/banner_ads_cubit.dart';
+import 'package:islamic_questions/core/utils/app_colors.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
   const CustomBottomNavigationBar({super.key});
@@ -18,7 +19,10 @@ class CustomBottomNavigationBar extends StatelessWidget {
           child: AdWidget(ad: cubit.bannerAd!),
         );
       } else {
-        return const SizedBox();
+        return Container(
+          color: AppColors.goldColor,
+          child: const Text("data"),
+        );
       }
     });
   }
